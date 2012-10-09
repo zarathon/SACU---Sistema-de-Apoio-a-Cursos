@@ -36,3 +36,10 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+#TinyMCE
+#gem 'tinymce-rails'
+#gem 'tinymce-rails-langs'
+
+#CKeditor
+gem 'ckeditor_rails', :require => 'ckeditor-rails'
