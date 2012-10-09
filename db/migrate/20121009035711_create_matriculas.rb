@@ -3,7 +3,7 @@ class CreateMatriculas < ActiveRecord::Migration
     create_table :matriculas do |t|
       t.references :aluno
       t.references :curso
-      t.double :nota
+      t.float :nota
 
       t.timestamps
     end

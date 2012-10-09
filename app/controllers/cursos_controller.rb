@@ -14,7 +14,7 @@ class CursosController < ApplicationController
   # GET /cursos/1.json
   def show
     @curso = Curso.find(params[:id])
-
+    @aulas = @curso.aulas
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @curso }

@@ -25,6 +25,7 @@ class AulasController < ApplicationController
   # GET /aulas/new.json
   def new
     @aula = Aula.new
+    @aula.curso_id = params[:id]
 
     respond_to do |format|
       format.html # new.html.erb

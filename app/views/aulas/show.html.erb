@@ -17,9 +17,9 @@
 
 <p>
   <b>Curso:</b>
-  <%= @aula.curso %>
+  <%= @aula.curso.nome %>
 </p>
 
 
 <%= link_to 'Edit', edit_aula_path(@aula) %> |
-<%= link_to 'Back', aulas_path %>
+<%= link_to 'Voltar para aulas', @aula.curso %>

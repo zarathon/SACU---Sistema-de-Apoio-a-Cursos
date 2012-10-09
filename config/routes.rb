@@ -8,6 +8,8 @@ Sacu::Application.routes.draw do
   resources :professors
 
   resources :alunos
+  
+  match 'curso/aula/:id' => 'aula#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

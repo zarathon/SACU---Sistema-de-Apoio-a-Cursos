@@ -3,7 +3,6 @@
 <table>
   <tr>
     <th>Nome</th>
-    <th>Descricao</th>
     <th>Professor</th>
     <th></th>
     <th></th>
@@ -13,8 +12,7 @@
 <% @cursos.each do |curso| %>
   <tr>
     <td><%= curso.nome %></td>
-    <td><%= curso.descricao %></td>
-    <td><%= curso.professor %></td>
+    <td><%= curso.professor.nome %></td>
     <td><%= link_to 'Show', curso %></td>
     <td><%= link_to 'Edit', edit_curso_path(curso) %></td>
     <td><%= link_to 'Destroy', curso, confirm: 'Are you sure?', method: :delete %></td>
