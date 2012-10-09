@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<div class="hero-unit">
+
 <h1>
   <%= @curso.nome %>
 </h1>
-
+<div class="alert alert-info">
 <h4>Descrição:</h4>
 <p>
   <%= @curso.descricao %>
@@ -14,6 +16,8 @@
 <p>
   <%= @curso.professor.nome %>
 </p>
+</div>
+</div>
 
 <table class="table table-bordered">
   <tr>

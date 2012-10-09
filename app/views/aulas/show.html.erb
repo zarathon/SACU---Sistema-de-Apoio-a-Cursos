@@ -1,25 +1,29 @@
-<p id="notice"><%= notice %></p>
+<% if notice%>
+<div class="alert">	
+	<p id="notice"><%= notice %></p>
+</div>
+<% end %>
 
-<p>
-  <b>Titulo:</b>
+<%= link_to 'Editar Aula', edit_aula_path(@aula), :class => "btn btn-warning" %>
+<%= link_to 'Voltar para aulas', @aula.curso, :class => "btn btn-primary" %>
+<div class="hero-unit">
+<h1>
   <%= @aula.titulo %>
-</p>
-
-<p>
-  <b>Resumo:</b>
-  <%= @aula.resumo %>
-</p>
-
-<p>
-  <b>Conteudo:</b>
-  <%= @aula.conteudo %>
-</p>
-
-<p>
+</h1>
+<h4>
   <b>Curso:</b>
   <%= @aula.curso.nome %>
-</p>
+</h4>
+
+<div class="alert alert-info">
+  <h4>Resumo:</h4>
+  <p><%= @aula.resumo %></p>
+</div>
+</div>
+<h4>Conteudo:</h4>
+  <%= @aula.conteudo %>
 
 
-<%= link_to 'Edit', edit_aula_path(@aula) %> |
-<%= link_to 'Voltar para aulas', @aula.curso %>
+
+
+
