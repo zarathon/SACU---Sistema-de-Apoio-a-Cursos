@@ -2,12 +2,12 @@ class AulasController < ApplicationController
   # GET /aulas
   # GET /aulas.json
   def index
-    @aulas = Aula.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @aulas }
-    end
+    #@aulas = Aula.all
+    #respond_to do |format|
+    #  format.html # index.html.erb
+    #  format.json { render json: @aulas }
+    #end
+    redirect_to(:cursos)
   end
 
   # GET /aulas/1
@@ -45,7 +45,7 @@ class AulasController < ApplicationController
 
     respond_to do |format|
       if @aula.save
-        format.html { redirect_to @aula, notice: 'Aula was successfully created.' }
+        format.html { redirect_to @aula, notice: 'Aula criada com sucesso.' }
         format.json { render json: @aula, status: :created, location: @aula }
       else
         format.html { render action: "new" }
@@ -61,7 +61,7 @@ class AulasController < ApplicationController
 
     respond_to do |format|
       if @aula.update_attributes(params[:aula])
-        format.html { redirect_to @aula, notice: 'Aula was successfully updated.' }
+        format.html { redirect_to @aula, notice: 'Aula alterada com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

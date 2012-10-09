@@ -17,13 +17,13 @@
   </div>
   <div class="field">
     <%= f.label :descricao %>
-    <%= f.text_area :descricao %>
+    <%= f.text_area :descricao, :class => "input-xxlarge" %>
   </div>
   <div class="field">
     <%= f.label :professor %>
     <%= f.collection_select(:professor_id, Professor.order('nome'), :id, :nome, {:prompt => true}) %>
   </div>
   <div class="form-actions">
-    <%= f.submit %>
+    <%= f.submit 'Salvar', :class => "btn btn-primary" %>
   </div>
 <% end %>

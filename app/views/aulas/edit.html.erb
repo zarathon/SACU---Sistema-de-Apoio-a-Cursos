@@ -1,6 +1,5 @@
-<h1>Editing aula</h1>
-
+<legend>Editando Aula</legend>
 <%= render 'form' %>
 
-<%= link_to 'Show', @aula %> |
-<%= link_to 'Back', aulas_path %>
+<%= link_to 'Ver+', @aula, :class => "btn btn-primary" %>
+<%= link_to 'Voltar para aulas', @aula.curso, :class => "btn btn-primary" %>
