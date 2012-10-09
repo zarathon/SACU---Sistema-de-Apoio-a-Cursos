@@ -1,0 +1,29 @@
+<%= form_for(@matricula) do |f| %>
+  <% if @matricula.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@matricula.errors.count, "error") %> prohibited this matricula from being saved:</h2>
+
+      <ul>
+      <% @matricula.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :aluno %><br />
+    <%= f.text_field :aluno %>
+  </div>
+  <div class="field">
+    <%= f.label :curso %><br />
+    <%= f.text_field :curso %>
+  </div>
+  <div class="field">
+    <%= f.label :nota %><br />
+    <%= f.text_field :nota %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

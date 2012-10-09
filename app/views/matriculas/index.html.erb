@@ -1,0 +1,27 @@
+<h1>Listing matriculas</h1>
+
+<table>
+  <tr>
+    <th>Aluno</th>
+    <th>Curso</th>
+    <th>Nota</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @matriculas.each do |matricula| %>
+  <tr>
+    <td><%= matricula.aluno %></td>
+    <td><%= matricula.curso %></td>
+    <td><%= matricula.nota %></td>
+    <td><%= link_to 'Show', matricula %></td>
+    <td><%= link_to 'Edit', edit_matricula_path(matricula) %></td>
+    <td><%= link_to 'Destroy', matricula, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Matricula', new_matricula_path %>
