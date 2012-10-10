@@ -11,12 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121009035840) do
+ActiveRecord::Schema.define(:version => 20121010214645) do
 
   create_table "alunos", :force => true do |t|
     t.string   "nome"
-    t.string   "email"
-    t.string   "senha"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -55,8 +53,6 @@ ActiveRecord::Schema.define(:version => 20121009035840) do
 
   create_table "professors", :force => true do |t|
     t.string   "nome"
-    t.string   "email"
-    t.string   "senha"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

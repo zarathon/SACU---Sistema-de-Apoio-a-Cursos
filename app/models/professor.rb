@@ -1,3 +1,3 @@
 class Professor < ActiveRecord::Base
-  attr_accessible :email, :nome, :senha
+  attr_accessible :nome
 end
