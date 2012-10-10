@@ -1,4 +1,9 @@
 Sacu::Application.routes.draw do
+  
+  root :to => 'app#index'
+  
+  get "app/index"
+
   resources :aulas
 
   resources :matriculas
