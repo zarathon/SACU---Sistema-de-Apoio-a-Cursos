@@ -1,7 +1,7 @@
-<%= form_for(@curso, :html =>{:class => "form-horizontal"}) do |f| %>
+<%= form_for @curso do |f| %>
   <% if @curso.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@curso.errors.count, "error") %> prohibited this curso from being saved:</h2>
+    <div class="alert alert-error">
+      <h4><%= pluralize(@curso.errors.count, "erro impediu", "erros impediram") %>  o curso de ser salvo:</h4>
 
       <ul>
       <% @curso.errors.full_messages.each do |msg| %>

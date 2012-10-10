@@ -1,7 +1,7 @@
 <%= form_for(@aula) do |f| %>
   <% if @aula.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@aula.errors.count, "error") %> prohibited this aula from being saved:</h2>
+    <div class="alert alert-error">
+      <h4><%= pluralize(@aula.errors.count, "erro impediu", "erros impediram") %> a aula de ser salva:</h4>
 
       <ul>
       <% @aula.errors.full_messages.each do |msg| %>
