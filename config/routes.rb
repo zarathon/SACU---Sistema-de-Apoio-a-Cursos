@@ -1,5 +1,7 @@
 Sacu::Application.routes.draw do
   
+  devise_for :alunos
+
   root :to => 'app#index'
   
   get "app/index"

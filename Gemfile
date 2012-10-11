@@ -43,3 +43,6 @@ gem 'jquery-rails'
 
 #CKeditor
 gem 'ckeditor_rails', :require => 'ckeditor-rails'
+
+#Devise
+gem 'devise'
