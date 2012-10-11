@@ -65,6 +65,15 @@
 	
 <div class="row-fluid">
 	<div class="span12">
+		<% if notice %>
+			<div class="alert alert-info">
+				<%= notice %>
+			</div>
+		<%elsif alert%>
+			<div class="alert alert-error">
+				<%= alert %>
+			</div>
+		<%end%>
 		<%= yield %>
 		<hr/>
 	</div>

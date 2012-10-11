@@ -1,11 +1,7 @@
-<% if notice%>
-<div class="alert">	
-	<p id="notice"><%= notice %></p>
-</div>
-<% end %>
-
+<div class="form-actions">
 <%= link_to 'Editar Aula', edit_aula_path(@aula), :class => "btn btn-warning" %>
 <%= link_to 'Voltar para aulas', @aula.curso, :class => "btn btn-primary" %>
+</div>
 <div class="hero-unit">
 <h1>
   <%= @aula.titulo %>
@@ -20,7 +16,7 @@
   <p><%= @aula.resumo %></p>
 </div>
 </div>
-<h4>Conteudo:</h4>
+<h4>Conteúdo:</h4>
   <%= raw(@aula.conteudo) %>
 
 
