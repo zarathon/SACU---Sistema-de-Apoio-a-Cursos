@@ -46,3 +46,6 @@ gem 'ckeditor_rails', :require => 'ckeditor-rails'
 
 #Devise
 gem 'devise'
+
+#TLSMail
+gem 'tlsmail'

@@ -36,4 +36,21 @@ Sacu::Application.configure do
   config.assets.debug = true
   
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  
+  require 'tlsmail'    
+  Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+  :enable_starttls_auto => true,
+  :address => "smtp.gmail.com",
+  :port => 587,
+  :tls                  => true,
+  :domain             => 'gmail.com', #you can also use google.com
+  :authentication     => :plain,
+
+  :user_name => "agenciazaraz@gmail.com",
+  :password => "suasenhaaqui"
+  }
+  
 end
