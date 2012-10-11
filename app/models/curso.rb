@@ -1,6 +1,6 @@
 class Curso < ActiveRecord::Base
   belongs_to :professor
-  attr_accessible :descricao, :nome, :professor_id
+  attr_accessible :descricao, :nome, :professor_id, :disponivel
   has_many :aluno, :through => :matriculas
   has_many :aulas
   

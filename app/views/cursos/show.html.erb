@@ -22,7 +22,7 @@
 <div class="form-actions">
 	<%= link_to "Adicionar Aula", {:controller => "aulas", :action => "new", :id => @curso.id}, :class => 'btn btn-primary' %> 
 	<%= link_to 'Editar Dados do Curso', edit_curso_path(@curso), :class => 'btn btn-warning' %>
-	<%= link_to 'Voltar para lista de Cursos', cursos_path, :class => 'btn btn-primary' %>
+	<%= link_to 'Voltar', :back, :class => 'btn btn-primary' %>
 </div>
 
 

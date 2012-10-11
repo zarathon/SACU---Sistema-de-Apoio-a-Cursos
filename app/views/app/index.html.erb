@@ -1,3 +1,21 @@
 <div class="hero-unit">
 	<h1>SiAC - Sistema de Apoio a Cursos</h1>
 </div>
+<h4>Lista dos Cursos Disponíveis</h4>
+<% if @cursos%>
+	<table class="table table-bordered">
+	  <tr>
+	    <th>Nome</th>
+	    <th>Professor</th>
+	    <th></th>
+	  </tr>
+	
+	<% @cursos.each do |curso| %>
+	  <tr>
+	    <td><%= curso.nome %></td>
+	    <td><%= curso.professor.nome %></td>
+	    <td><%= link_to 'Ver+', curso, :class => 'btn btn-info' %></td>
+	  </tr>
+	<% end %>
+<%end%>
+</table>

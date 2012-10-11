@@ -23,6 +23,10 @@
     <%= f.label :professor %>
     <%= f.collection_select(:professor_id, Professor.order('nome'), :id, :nome, {:prompt => true}) %>
   </div>
+  <div class="field">
+    <%= f.label :disponivel, "Disponível:" %>
+    <%= f.check_box :disponivel %>
+  </div>
   <div class="form-actions">
     <%= f.submit 'Salvar', :class => "btn btn-primary" %>
   </div>

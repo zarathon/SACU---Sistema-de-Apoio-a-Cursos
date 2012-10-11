@@ -1,6 +1,13 @@
 class CursosController < ApplicationController
+  
+  before_filter :authenticate_admin!, :only => [:index,:new, :create, :destroy]
+  before_filter :authenticate_professor!, :only => [:edit, :update]
+  
+  
+  
   # GET /cursos
   # GET /cursos.json
+  
   def index
     @cursos = Curso.all
 

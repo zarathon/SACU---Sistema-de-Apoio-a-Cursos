@@ -1,7 +1,3 @@
-<div class="form-actions">
-	<%= link_to 'Adicionar um Curso', new_curso_path, :class => "btn btn-primary" %>
-</div>
-
 <h1>Lista dos Cursos</h1>
 
 <table class="table table-bordered">
@@ -9,7 +5,6 @@
     <th>Nome</th>
     <th>Professor</th>
 	<th>Disponível</th>
-    <th></th>
     <th></th>
     <th></th>
   </tr>
@@ -21,7 +16,6 @@
 	<td><%= curso.disponivel ? "Sim":"Não" %>
     <td><%= link_to 'Ver+', curso, :class => 'btn btn-info' %></td>
     <td><%= link_to 'Editar', edit_curso_path(curso), :class => 'btn btn-warning' %></td>
-    <td><%= link_to 'Apagar', curso, confirm: 'Você tem certeza?', method: :delete, :class => 'btn btn-danger' %></td>
   </tr>
 <% end %>
 </table>

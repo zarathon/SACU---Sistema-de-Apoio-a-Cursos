@@ -1,10 +1,15 @@
 Sacu::Application.routes.draw do
   
+  devise_for :professors
+
+  devise_for :admins
+
   devise_for :alunos
 
   root :to => 'app#index'
   
   get "app/index"
+  get "app/professor"
 
   resources :aulas
 

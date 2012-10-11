@@ -1,4 +1,8 @@
 class AulasController < ApplicationController
+  
+  before_filter :authenticate_professor!, :only => [:new, :create, :edit, :update, :destroy, :show]
+  before_filter :authenticate_aluno!, :only => [:show]
+  
   # GET /aulas
   # GET /aulas.json
   def index

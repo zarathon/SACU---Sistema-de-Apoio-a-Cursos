@@ -1,4 +1,6 @@
 class ProfessorsController < ApplicationController
+  
+  before_filter :authenticate_admin!, :except => [:show]
   # GET /professors
   # GET /professors.json
   def index
@@ -24,12 +26,13 @@ class ProfessorsController < ApplicationController
   # GET /professors/new
   # GET /professors/new.json
   def new
-    @professor = Professor.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @professor }
-    end
+    #@professor = Professor.new
+    #
+    #respond_to do |format|
+    #  format.html # new.html.erb
+    #  format.json { render json: @professor }
+    #end
+    redirect_to(new_professor_registration_path)
   end
 
   # GET /professors/1/edit
