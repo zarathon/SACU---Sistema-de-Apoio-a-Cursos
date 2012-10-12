@@ -10,6 +10,7 @@ Sacu::Application.routes.draw do
   
   get "app/index"
   get "app/professor"
+  match "app/matricula/:id" => 'app#matricula'
 
   resources :aulas
 

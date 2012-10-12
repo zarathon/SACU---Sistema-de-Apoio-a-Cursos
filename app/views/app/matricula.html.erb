@@ -1,0 +1,54 @@
+<div class="hero-unit">
+<h1>
+  <%= @curso.nome %>
+</h1>
+<div class="alert alert-info">
+<h4>Descrição:</h4>
+<p>
+  <%= @curso.descricao %>
+</p>
+<h4>Professor:</h4>
+<p>
+  <%= @curso.professor.nome %>
+</p>
+</div>
+</div>
+
+<h4>Alunos Matriculados</h4>
+<table class="table table-bordered">
+  <tr>
+    <th>Nome</th>
+    <th>Email</th>
+    <th></th>
+  </tr>
+
+<% @alunos_matriculados.each do |aluno| %>
+  <tr>
+    <td><%= aluno.nome %></td>
+    <td><%= aluno.email %></td>
+    <td><%= link_to 'Remover', Matricula.find_by_aluno_id_and_curso_id(aluno.id,@curso.id), confirm: 'Você tem certeza?', method: :delete, :class => 'btn btn-danger' %></td>
+  </tr>
+<% end %>
+</table>
+
+<h4>Alunos Não Matriculados</h4>
+<table class="table table-bordered">
+  <tr>
+    <th>Nome</th>
+    <th>Email</th>
+    <th></th>
+  </tr>
+
+<% @alunos.each do |aluno| %>
+<%= form_for(@matricula) do |f| %>
+	<%= f.hidden_field :aluno_id, :value => aluno.id %>
+	<%= f.hidden_field :curso_id, :value => @curso.id %>
+
+  <tr>
+    <td><%= aluno.nome %></td>
+    <td><%= aluno.email %></td>
+    <td><%= f.submit 'Adicionar', :class => 'btn btn-success' %></td>
+  </tr>
+<% end %>
+<% end %>
+</table>

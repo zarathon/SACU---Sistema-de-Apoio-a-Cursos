@@ -44,7 +44,7 @@ class MatriculasController < ApplicationController
 
     respond_to do |format|
       if @matricula.save
-        format.html { redirect_to @matricula, notice: 'Matricula was successfully created.' }
+        format.html { redirect_to :controller => "app", :action => "matricula", :id => @matricula.curso.id}
         format.json { render json: @matricula, status: :created, location: @matricula }
       else
         format.html { render action: "new" }
@@ -76,7 +76,7 @@ class MatriculasController < ApplicationController
     @matricula.destroy
 
     respond_to do |format|
-      format.html { redirect_to matriculas_url }
+      format.html { redirect_to :controller => "app", :action => "matricula", :id => @matricula.curso.id }
       format.json { head :no_content }
     end
   end

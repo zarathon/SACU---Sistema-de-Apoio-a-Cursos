@@ -1,0 +1,22 @@
+<div class="form-actions">
+	<%= link_to 'Voltar', :back, :class => 'btn btn-primary' %>
+</div>
+
+
+
+<h4>Aulas Disponíveis</h4>
+<table class="table table-bordered">
+  <tr>
+    <th>Título</th>
+    <th>Resumo</th>
+    <th></th>
+  </tr>
+
+<% @aulas.each do |aula| %>
+  <tr>
+    <td><%= aula.titulo %></td>
+    <td><%= aula.resumo %></td>
+    <td><%= link_to 'Ver+', aula, :class => 'btn btn-info' %></td>
+  </tr>
+<% end %>
+</table>

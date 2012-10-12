@@ -8,5 +8,6 @@ class Aluno < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :nome
-  has_many :curso, :through => :matriculas
+  has_many :matriculas
+  has_many :cursos, :through => :matriculas
 end

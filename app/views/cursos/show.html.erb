@@ -17,30 +17,10 @@
 </div>
 </div>
 
-<div class="form-actions">
-	<%= link_to "Adicionar Aula", {:controller => "aulas", :action => "new", :id => @curso.id}, :class => 'btn btn-primary' %> 
-	<%= link_to 'Editar Dados do Curso', edit_curso_path(@curso), :class => 'btn btn-warning' %>
-	<%= link_to 'Voltar', :back, :class => 'btn btn-primary' %>
-</div>
+<% if current_professor%>
+<%= render :partial => 'professor_view' %>
+<%end%>
 
-
-<h4>Aulas Disponíveis</h4>
-<table class="table table-bordered">
-  <tr>
-    <th>Título</th>
-    <th>Resumo</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @aulas.each do |aula| %>
-  <tr>
-    <td><%= aula.titulo %></td>
-    <td><%= aula.resumo %></td>
-    <td><%= link_to 'Ver+', aula, :class => 'btn btn-info' %></td>
-    <td><%= link_to 'Editar', edit_aula_path(aula), :class => 'btn btn-warning' %></td>
-    <td><%= link_to 'Apagar', aula, confirm: 'Você tem certeza?', method: :delete, :class => 'btn btn-danger' %></td>
-  </tr>
-<% end %>
-</table>
+<% if current_aluno%>
+<%= render :partial => 'aluno_view' %>
+<%end%>
