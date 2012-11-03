@@ -18,6 +18,8 @@
 </div>
 <h4>Conteúdo:</h4>
   <%= raw(@aula.conteudo) %>
+<h4>Arquivo de teste</h4>
+<%= link_to "Clique para download", @aula.teste.url %>
 
 
 

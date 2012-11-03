@@ -1,4 +1,4 @@
-<%= form_for(@aula) do |f| %>
+<%= form_for(@aula, :html => {:multipart => true}) do |f| %>
   <% if @aula.errors.any? %>
     <div class="alert alert-error">
       <h4><%= pluralize(@aula.errors.count, "erro impediu", "erros impediram") %> a aula de ser salva:</h4>
@@ -28,6 +28,11 @@
   <div class="field">
     <%= f.label :conteudo %>
     <%= f.text_area :conteudo, :class=>"ckeditor" %>
+  </div>
+  <div class="field">
+    <%= f.label :teste %>
+    <%= f.file_field :teste %>
+	<p class="text-error"> Somente arquivos com a extensão .rb</p>
   </div>
   <div class="form-actions">
     <%= f.submit 'Salvar', :class => "btn btn-primary"%>

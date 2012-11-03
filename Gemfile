@@ -49,3 +49,6 @@ gem 'devise'
 
 #TLSMail
 gem 'tlsmail'
+
+#Paperclip
+gem "paperclip", "~> 3.0"

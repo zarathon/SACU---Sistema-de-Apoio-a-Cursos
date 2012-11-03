@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121011173518) do
+ActiveRecord::Schema.define(:version => 20121103001630) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -55,8 +55,12 @@ ActiveRecord::Schema.define(:version => 20121011173518) do
     t.text     "resumo"
     t.text     "conteudo"
     t.integer  "curso_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "teste_file_name"
+    t.string   "teste_content_type"
+    t.integer  "teste_file_size"
+    t.datetime "teste_updated_at"
   end
 
   add_index "aulas", ["curso_id"], :name => "index_aulas_on_curso_id"
